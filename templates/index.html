@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#17182d">
+
+    <title>ShopAssist AI | Customer Support</title>
+    <meta
+        name="description"
+        content="ShopAssist AI provides helpful e-commerce customer support."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    ></script>
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+        defer
+    ></script>
+</head>
+
+<body>
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <a class="brand" href="/" aria-label="ShopAssist AI home">
+            <span class="brand-icon">
+                <i data-lucide="shopping-bag"></i>
+            </span>
+
+            <span class="brand-copy">
+                <strong>ShopAssist AI</strong>
+                <span>AI CUSTOMER CARE</span>
+            </span>
+        </a>
+
+        <button class="new-chat-btn" id="new-chat-btn" type="button">
+            <i data-lucide="plus"></i>
+            <span>New conversation</span>
+        </button>
+
+        <div class="sidebar-label">SUPPORT CENTER</div>
+
+        <nav class="sidebar-nav" aria-label="Support topics">
+            <button class="nav-item active" type="button"
+                    data-topic="general">
+                <i data-lucide="messages-square"></i>
+                <span>AI Assistant</span>
+            </button>
+
+            <button class="nav-item" type="button"
+                    data-topic="order">
+                <i data-lucide="package-check"></i>
+                <span>Orders &amp; Delivery</span>
+            </button>
+
+            <button class="nav-item" type="button"
+                    data-topic="returns">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Returns &amp; Refunds</span>
+            </button>
+
+            <button class="nav-item" type="button"
+                    data-topic="payments">
+                <i data-lucide="credit-card"></i>
+                <span>Payments</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+                <span class="help-icon">
+                    <i data-lucide="lightbulb"></i>
+                </span>
+
+                <h3>Need a little help?</h3>
+                <p>
+                    Ask ShopAssist anything about your shopping
+                    experience.
+                </p>
+            </div>
+
+            <div class="profile">
+                <div class="profile-avatar">SA</div>
+
+                <div class="profile-info">
+                    <strong>ShopAssist AI</strong>
+                    <span>Virtual Support Assistant</span>
+                </div>
+
+                <i data-lucide="shield-check" class="profile-shield"></i>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN WORKSPACE -->
+    <main class="main-workspace">
+        <div class="workspace-inner">
+
+            <!-- HEADER -->
+            <header class="welcome-section">
+                <div class="eyebrow">
+                    <i data-lucide="sparkles"></i>
+                    <span>YOUR PERSONAL SHOPPING ASSISTANT</span>
+                </div>
+
+                <h1>
+                    Shopping support,<br>
+                    <span>made effortless.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Hello there! I'm ShopAssist AI. From delivery
+                    questions to returns and refunds, I'm here to
+                    make your shopping experience simpler.
+                </p>
+            </header>
+
+            <div class="welcome-divider"></div>
+
+            <!-- SUGGESTED TOPICS -->
+            <section class="suggestions-section"
+                     aria-labelledby="suggestions-title">
+
+                <div class="suggestions-heading">
+                    <div>
+                        <h2 id="suggestions-title">
+                            How can I help you today?
+                        </h2>
+                        <p>Choose a topic or ask me anything.</p>
+                    </div>
+
+                    <span class="online-status">
+                        <span class="status-dot"></span>
+                        AI online
+                    </span>
+                </div>
+
+                <div class="suggestion-grid">
+                    <button class="suggestion-card" type="button"
+                            data-prompt="How can I track my order?">
+                        <span class="suggestion-icon purple">
+                            <i data-lucide="truck"></i>
+                        </span>
+
+                        <span class="suggestion-copy">
+                            <strong>Track my order</strong>
+                            <span>Shipping and delivery help</span>
+                        </span>
+
+                        <i data-lucide="arrow-up-right"
+                           class="card-arrow"></i>
+                    </button>
+
+                    <button class="suggestion-card" type="button"
+                            data-prompt="What is the general return and exchange process?">
+                        <span class="suggestion-icon orange">
+                            <i data-lucide="package-open"></i>
+                        </span>
+
+                        <span class="suggestion-copy">
+                            <strong>Returns &amp; exchanges</strong>
+                            <span>Understand your options</span>
+                        </span>
+
+                        <i data-lucide="arrow-up-right"
+                           class="card-arrow"></i>
+                    </button>
+
+                    <button class="suggestion-card" type="button"
+                            data-prompt="Can you explain the general refund process?">
+                        <span class="suggestion-icon green">
+                            <i data-lucide="wallet"></i>
+                        </span>
+
+                        <span class="suggestion-copy">
+                            <strong>Refund assistance</strong>
+                            <span>Get help with refund questions</span>
+                        </span>
+
+                        <i data-lucide="arrow-up-right"
+                           class="card-arrow"></i>
+                    </button>
+
+                    <button class="suggestion-card" type="button"
+                            data-prompt="What payment methods are commonly available for online shopping?">
+                        <span class="suggestion-icon blue">
+                            <i data-lucide="credit-card"></i>
+                        </span>
+
+                        <span class="suggestion-copy">
+                            <strong>Payment questions</strong>
+                            <span>Explore payment options</span>
+                        </span>
+
+                        <i data-lucide="arrow-up-right"
+                           class="card-arrow"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- CHAT -->
+            <section class="chat-workspace"
+                     aria-label="Chat with ShopAssist AI">
+
+                <div class="chat-container" id="chat-container"
+                     aria-live="polite" aria-relevant="additions">
+
+                    <article class="message assistant-message">
+                        <div class="message-avatar assistant-avatar">
+                            <i data-lucide="shopping-bag"></i>
+                        </div>
+
+                        <div class="message-body">
+                            <div class="message-meta">
+                                <strong>ShopAssist AI</strong>
+                                <span>AI Assistant</span>
+                            </div>
+
+                            <div class="message-bubble">
+                                Welcome! 👋 I'm here to help with your
+                                shopping questions. What can I help you
+                                with today?
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- COMPOSER -->
+                <form class="composer" id="chat-form">
+                    <label class="sr-only" for="message-input">
+                        Message ShopAssist AI
+                    </label>
+
+                    <textarea
+                        id="message-input"
+                        name="message"
+                        placeholder="Message ShopAssist AI..."
+                        rows="1"
+                        maxlength="2000"
+                        required
+                    ></textarea>
+
+                    <div class="composer-footer">
+                        <p class="privacy-note">
+                            <i data-lucide="shield-check"></i>
+                            <span>Never share passwords or payment credentials.</span>
+                        </p>
+
+                        <button
+                            class="send-button"
+                            id="send-button"
+                            type="submit"
+                            aria-label="Send message"
+                            title="Send message"
+                        >
+                            <i data-lucide="arrow-up"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <p class="disclaimer">
+                    ShopAssist AI can make mistakes. Verify important
+                    order and payment information with your retailer.
+                </p>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
