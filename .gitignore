@@ -1,0 +1,37 @@
+```gitignore
+# Environment variables and API keys
+.env
+.env.*
+
+# Allow an example environment file
+!.env.example
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE settings
+.vscode/
+
+# Test and coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Log files
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+```
